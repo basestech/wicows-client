@@ -1,7 +1,7 @@
 import React from 'react';
 
-const animalName = ({animalName}) =>{
-    return <p>{animalName}</p>
+const AnimalName = ({name}) =>{
+    return <span className='name'>{name}</span>
 }
 
-export default animalName;
+export default AnimalName;
