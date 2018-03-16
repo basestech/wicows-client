@@ -24,4 +24,4 @@ storiesOf('Animal', module)
       animalName = 'Hayvan'
       animalNumber = '2000'
                                  />)
-  .add('Annotation', ()=> <Annotation />);
+  .add('Annotation', ()=> <Annotation label="Test annotation"/>);
