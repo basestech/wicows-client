@@ -20,7 +20,7 @@ storiesOf('Button', module)
 storiesOf('Animal', module)
   .add('AnimalHeader', () => <AnimalHeader name = 'Sarıkız' number = '54'/>)
   .add('AnnotationHeader', () => <AnnotationHeader
-      actionName = 'Not Ekle'
+      actionType = 'insemination'
       animalName = 'Hayvan'
       animalNumber = '2000'
                                  />)

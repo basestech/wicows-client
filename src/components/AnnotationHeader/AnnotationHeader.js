@@ -2,13 +2,11 @@ import React from 'react';
 import ActionHeader from './ActionHeader';
 import AnimalHeader from '../AnimalHeader/AnimalHeader';
 
-const annotationHeader = (props) =>{
-    return (
+const AnnotationHeader = ({actionType, animalName, animalNumber}) =>
         <div>
-            <ActionHeader actionName = {props.actionName}/>
-            <AnimalHeader animalName = {props.animalName} animalNumber = {props.animalNumber}/>
+            <ActionHeader type = {actionType}/>
+            <AnimalHeader name = {animalName} number = {animalNumber}/>
         </div>
-        )
-}
 
-export default annotationHeader;
+
+export default AnnotationHeader;

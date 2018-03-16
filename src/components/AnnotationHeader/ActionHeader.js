@@ -1,7 +1,13 @@
 import React from 'react';
 
-const actionHeader = (props) =>{
-    return <h2>{props.actionName}</h2>
+const actionTypeNames = { // TODO: i18n later
+    noresponse: "Unable to respond",
+    falsealarm: "False alarm",
+    insemination: "Insemination complete"
 }
 
-export default actionHeader;
+const ActionHeader = ({type}) => {
+    return <h6 className={`action ${type}`}>{actionTypeNames[type]}</h6>
+}
+
+export default ActionHeader;
