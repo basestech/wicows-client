@@ -1,7 +1,8 @@
 import React from 'react';
+import './Annotation.css';
 
 const Annotation = () => {
-    return <textarea></textarea>
+    return <textarea className="Annotation"></textarea>
 }
 
 export default Annotation;
