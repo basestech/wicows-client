@@ -1,4 +1,13 @@
-AnimalName {
-    color: red;
-    text-align: center
+h2.AnimalHeader {
+    width: 100%;
+    font-size: 2rem;
+    margin: 0;
+    background-color: green;
+    color: white;
+    padding: .5rem;
+}
+
+.AnimalHeader .number {
+    opacity: .6;
+    margin-right: .5em;
 }

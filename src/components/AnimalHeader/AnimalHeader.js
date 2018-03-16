@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './AnimalHeader.css';
+import './AnimalHeader.css';
 import AnimalNumber from './AnimalNumber';
 import AnimalName from './AnimalName';
 
