@@ -10,6 +10,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 import AnimalHeader from '../components/AnimalHeader/AnimalHeader';
 import AnnotationHeader from '../components/AnnotationHeader/AnnotationHeader';
 import Annotation from '../components/Annotation/Annotation';
+import Selector from '../components/AnnotationSourceSelector/Selector/Selector';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -26,4 +27,5 @@ storiesOf('Animal', module)
                                  />)
   .add('Annotation', ()=> <Annotation />)
   .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>);
+  .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>)
 
