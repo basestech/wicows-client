@@ -15,10 +15,10 @@ storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 
-storiesOf('wiCow', module)
-  .add('AnimalHeader', () => <AnimalHeader animalName = 'Hayvan Adi' animalNumber = '2300'/>)
-  .add('AnnotationHeader', () => <AnnotationHeader 
-                    actionName = 'Not Ekle' 
-                    animalName = 'Hayvan'
-                    animalNumber = '2000'
-                    />);
+storiesOf('Animal', module)
+  .add('AnimalHeader', () => <AnimalHeader name = 'Sarıkız' number = '54'/>)
+  .add('AnnotationHeader', () => <AnnotationHeader
+      actionName = 'Not Ekle'
+      animalName = 'Hayvan'
+      animalNumber = '2000'
+                                 />);
