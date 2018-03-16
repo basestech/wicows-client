@@ -3,11 +3,11 @@ import './AnimalHeader.css';
 import AnimalNumber from './AnimalNumber';
 import AnimalName from './AnimalName';
 
-const AnimalHeader = (props) =>{
+const AnimalHeader = ({name, number}) =>{
     return (
         <h2 className="AnimalHeader">
-            <AnimalNumber number = {props.number} />
-            <AnimalName name = {props.name} />
+            <AnimalNumber number = {number} />
+            <AnimalName name = {name} />
         </h2>
     )
 }
