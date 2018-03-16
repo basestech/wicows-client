@@ -1,0 +1,20 @@
+textarea.Annotation {
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    background-color: #eee;
+    margin: 0;
+    height: auto;
+    outline: none;
+}
+
+textarea.Annotation:focus {
+    background-color: #def;
+}
+
+label.Annotation {
+    margin: .1rem;
+    font-size: .6rem;
+    margin-top: 1rem;
+    opacity: .6;
+}

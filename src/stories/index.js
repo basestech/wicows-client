@@ -22,12 +22,10 @@ storiesOf('Button', module)
 storiesOf('Animal', module)
   .add('AnimalHeader', () => <AnimalHeader name = 'Sarıkız' number = '54'/>)
   .add('AnnotationHeader', () => <AnnotationHeader
-      actionName = 'Not Ekle'
+      actionType = 'insemination'
       animalName = 'Hayvan'
       animalNumber = '2000'
                                  />)
-  .add('Annotation', ()=> <Annotation />)
+  .add('Annotation', ()=> <Annotation label="Test annotation"/>)
   .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>)
   .add('AnnotationSourceSelector', ()=> <AnnotationSourceSelector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>);
-
-
