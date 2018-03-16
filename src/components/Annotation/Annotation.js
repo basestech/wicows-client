@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Annotation = () => {
-    return <textarea></textarea>
+
+    const onUpdate = ()=>{
+
+    }
+
+    return <textarea onChange={onUpdate}></textarea>
 }
 
 export default Annotation;
