@@ -24,4 +24,6 @@ storiesOf('Animal', module)
       animalName = 'Hayvan'
       animalNumber = '2000'
                                  />)
-  .add('Annotation', ()=> <Annotation />);
+  .add('Annotation', ()=> <Annotation />)
+  .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>);
+
