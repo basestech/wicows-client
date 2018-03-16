@@ -1,7 +1,7 @@
 import React from 'react';
 
-const animalNumber = ({animalNumber}) =>{
-    return <span>{animalNumber}</span>
+const AnimalNumber = ({number}) =>{
+    return <span className='number'>{number}</span>
 }
 
-export default animalNumber;
+export default AnimalNumber;
