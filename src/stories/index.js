@@ -11,6 +11,7 @@ import AnimalHeader from '../components/AnimalHeader/AnimalHeader';
 import AnnotationHeader from '../components/AnnotationHeader/AnnotationHeader';
 import Annotation from '../components/Annotation/Annotation';
 import Selector from '../components/AnnotationSourceSelector/Selector/Selector';
+import AnnotationSourceSelector from '../components/AnnotationSourceSelector/AnnotationSourceSelector';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -26,6 +27,7 @@ storiesOf('Animal', module)
       animalNumber = '2000'
                                  />)
   .add('Annotation', ()=> <Annotation />)
-  .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>);
   .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>)
+  .add('AnnotationSourceSelector', ()=> <AnnotationSourceSelector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>);
+
 
