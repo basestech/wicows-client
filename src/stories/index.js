@@ -8,6 +8,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 
 import AnimalHeader from '../components/AnimalHeader/AnimalHeader';
 import AnnotationHeader from '../components/AnnotationHeader/AnnotationHeader';
+import Annotation from '../components/Annotation/Annotation';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -21,4 +22,5 @@ storiesOf('Animal', module)
       actionName = 'Not Ekle'
       animalName = 'Hayvan'
       animalNumber = '2000'
-                                 />);
+                                 />)
+  .add('Annotation', ()=> <Annotation />);
