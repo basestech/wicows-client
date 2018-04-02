@@ -20,6 +20,12 @@ class AnnotationView extends Component{
                 />
                 <Annotation label = 'Test Annotation'/>
                 <AnnotationSourceSelector />
+                <AnnotationSourceSelector options={
+                    [
+                        {value : 'value', changed: '', text: 'Annotation 1'}
+                    ]
+                }/>
+                <SubmitButton/>
             </React.Fragment>
         );
     }
