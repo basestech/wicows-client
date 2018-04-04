@@ -18,10 +18,16 @@ class AnnotationView extends Component{
 
     render(){
         let annotationView= <p>No Action</p>;
+        let options = [];
 
         if(this.props._actions[this.state.action_id]){
             let action = this.props._actions[this.state.action_id];
             console.log(action);
+            this.props._conditions.map(val =>{
+                    options.push({id : val.id, value: val.id, changed: '', text: val.name});
+            });
+            
+            console.log(options);
 
             annotationView = (
                 <React.Fragment>
@@ -31,15 +37,11 @@ class AnnotationView extends Component{
                         animalNumber = {this.props._animals.byId[action.animal_id].number}
                     />
                     <Annotation label = {action.annotation_label}/>
-                    {/* <AnnotationSourceSelector options={
-                        [{value : 'value', changed: '', text: 'Annotation 1'}]
-                    }/> */}
+                    <AnnotationSourceSelector options={options}/>
                     <SubmitButton/>
                 </React.Fragment>
             )
-
         }
-
 
         return (
             <React.Fragment>

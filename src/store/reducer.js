@@ -10,10 +10,11 @@ const initialState = {
         }
     },
     conditions : [
-        {id : 1, name : 'Hastalık'}
+        {id : 1, name : 'Disease'},
+        {id : 2, name : 'False Alarm'}
     ],
     actions : {
-        1: {animal_id :2, annotation_label: 'Annotation about Animal given', type : 'insemination' , conditions: [1]}
+        1: {animal_id :1, annotation_label: 'Annotation about Animal given', type : 'insemination' , conditions: [1]}
     }
 }
 

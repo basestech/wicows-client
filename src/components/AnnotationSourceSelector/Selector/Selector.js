@@ -4,7 +4,7 @@ const Selector = ({options})=>{
     return <select>
                 {   options ? 
                     options.map((val)=>{
-                        return <option value={val.value} onchanged= {val.changed} >{val.text}</option>;
+                        return <option key={val.id} value={val.value} onchanged= {val.changed} >{val.text}</option>;
                     })
                     :
                     <option>No source for select</option>
