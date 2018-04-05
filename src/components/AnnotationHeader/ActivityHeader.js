@@ -6,8 +6,8 @@ const actionTypeNames = { // TODO: i18n later
     insemination: "Insemination complete"
 }
 
-const ActionHeader = ({type}) => {
+const ActivityHeader = ({type}) => {
     return <h6 className={`action ${type}`}>{actionTypeNames[type]}</h6>
 }
 
-export default ActionHeader;
+export default ActivityHeader;
