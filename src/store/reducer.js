@@ -14,13 +14,13 @@ const initialState = {
         {id : 2, name : 'False Alarm'}
     ],
     actions : {
-        1: {animal_id :1, annotation_label: 'Annotation about Animal given', type : 'insemination' , conditions: [1]}
+        1: {animal_id :1, annotation: 'Annotation about Animal given', type : 'insemination' , conditions: [1]}
     }
 }
 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
-        
+
     }
     return state;
 }

@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AnnotationView />
+          <AnnotationView animal_id={2} action="insemination" />
       </div>
     );
   }
