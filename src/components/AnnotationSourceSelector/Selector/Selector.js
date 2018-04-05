@@ -10,7 +10,7 @@ const Selector = ({id, label, options, onChange})=>{
     </React.Fragment>
 }
 
-Selector.PropTypes = {
+Selector.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(PropTypes.shape({
