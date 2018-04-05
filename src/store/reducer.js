@@ -13,14 +13,26 @@ const initialState = {
         {id : 1, name : 'Disease'},
         {id : 2, name : 'False Alarm'}
     ],
-    actions : {
-        1: {animal_id :1, annotation: 'Annotation about Animal given', type : 'insemination' , conditions: [1]}
+    activities : {
+        ids: [1],
+        byId: {
+            1: {id: 1, animal_id :1, annotation: 'Annotation about Animal given', source: 'exam', activity: 'insemination' , conditions: [1]}
+        }
     }
+}
+
+function nextID(ids) {
+    return ids.reduce(Math.max,0) + 1
 }
 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
-
+        case actionTypes.NEW_ACTIVITY:
+            const newId = nextID(state.activities.ids)
+            const newIds = [...state.activities.ids, newId];
+            const newById = {...state.activities.byId, [newId]: {...action.activity, id: newId } }
+            return {...state, activities: { ids: newIds, byId: newById }}
+            break;
     }
     return state;
 }
