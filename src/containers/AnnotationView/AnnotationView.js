@@ -9,12 +9,12 @@ import SubmitButton from '../../components/SubmitButton/SubmitButton'
 class AnnotationView extends Component{
 
     render(){
-        const {action, animal, conditions} = this.props
+        const {activity, animal, conditions} = this.props
 
         return (
             <React.Fragment>
                 <AnnotationHeader
-                    actionType = {action}
+                    activity = {activity}
                     animalName = {animal.name}
                     animalNumber = {animal.number}
                 />
