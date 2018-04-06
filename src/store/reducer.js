@@ -1,4 +1,5 @@
-import * as actionTypes from './actions';
+import * as at from './actions';
+import * as WEB from '../constants/webStatus'
 
 const initialState = {
     animals: {
@@ -7,12 +8,6 @@ const initialState = {
             1: {name :'Sarıkız', number : 52},
             2: {name :'Karakız', number : 53},
             3: {name :'Alakız', number : 54}
-        }
-    },
-    activities : {
-        ids: [1],
-        byId: {
-            1: {id: 1, animal_id: 1, annotation: 'Annotation about Animal given', source: 'exam', activity: 'insemination' , conditions: [1]}
         }
     }
 }
@@ -25,13 +20,20 @@ const reducer = (state = initialState, action)=>{
     switch(action.type){
         case "@@INIT":
             return state;
-        case actionTypes.NEW_ACTIVITY:
-            const newId = nextID(state.activities.ids)
-            const newIds = [...state.activities.ids, newId];
-            const newById = {...state.activities.byId, [newId]: {...action.activity, id: newId } }
-            return {...state, activities: { ids: newIds, byId: newById }};
         case "CONSOLE_LOG":
             return { ...state, lastLog: action.time }
+
+        case at.NEW_ACTIVITY_INIT:
+            return {...state, new_activity: { status: WEB.NONE, ...action.activity } };
+        case at.NEW_ACTIVITY_CHANGE:
+            if (state.new_activity.status !== WEB.NONE) { return state }
+            return {...state, new_activity: { ...state.new_activity, ...action.activity } };
+        case at.NEW_ACTIVITY_SEND:
+            return {...state, new_activity: { ...state.new_activity, status: WEB.REQUEST } };
+        case at.NEW_ACTIVITY_SUCCESS:
+            return {...state, new_activity: { ...state.new_activity, status: WEB.SUCCESS } };
+        case at.NEW_ACTIVITY_FAILURE:
+            return {...state, new_activity: { ...state.new_activity, status: WEB.FAILURE, error: action.error } };
     }
     const e = new Error(`No such action: ${action.type}`)
     console.error(e);

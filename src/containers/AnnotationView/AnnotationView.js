@@ -6,12 +6,22 @@ import Annotation from '../../components/Annotation/Annotation';
 import AnnotationSourceSelector from '../../components/AnnotationSourceSelector/AnnotationSourceSelector';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
 
-import {NEW_ACTIVITY} from '../../store/actions';
+import {NEW_ACTIVITY_INIT, NEW_ACTIVITY_CHANGE, NEW_ACTIVITY_SEND} from '../../store/actions';
 
-class AnnotationView extends Component{
+class AnnotationView extends Component {
+
+    componentDidMount = () => {
+        this.props.init();
+    }
 
     render(){
-        const {activity, animal, conditions} = this.props
+        const {
+            activity,
+            animal,
+            submit,
+            change_source,
+            change_annotation
+        } = this.props
 
         return (
             <React.Fragment>
@@ -20,9 +30,9 @@ class AnnotationView extends Component{
                     animalName = {animal.name}
                     animalNumber = {animal.number}
                 />
-                <Annotation label="Notes"/>
-                <AnnotationSourceSelector/>
-                <SubmitButton label="Submit"/>
+                <Annotation label="Notes" onChange={change_annotation}/>
+                <AnnotationSourceSelector onChange={change_source}/>
+                <SubmitButton label="Submit" onClick={submit}/>
             </React.Fragment>
         )
     }
@@ -30,23 +40,39 @@ class AnnotationView extends Component{
 
 const mapStateToProps = (state, props) => {
     return {
-        animal : state.animals.byId[props.animal_id],
-        conditions : state.conditions
+        animal : state.animals.byId[props.animal_id]
     };
 }
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        submit: (annotation, source) => {
+        init: () => {
             dispatch({
-                type: NEW_ACTIVITY,
+                type: NEW_ACTIVITY_INIT,
                 activity: {
                     type: props.activity,
                     animal_id: props.animal_id,
-                    annotation: annotation,
-                    source: source
+                    annotation: "",
+                    source: "data"
                 }
-            })
+            });
+        },
+        submit: () => {
+            dispatch({
+                type: NEW_ACTIVITY_SEND
+            });
+        },
+        change_annotation: (annotation) => {
+            dispatch({
+                type: NEW_ACTIVITY_CHANGE,
+                activity: { annotation }
+            });
+        },
+        change_source: (source) => {
+            dispatch({
+                type: NEW_ACTIVITY_CHANGE,
+                activity: { source }
+            });
         }
     };
 };
