@@ -5,8 +5,9 @@ import AnnotationHeader from '../../components/AnnotationHeader/AnnotationHeader
 import Annotation from '../../components/Annotation/Annotation';
 import AnnotationSourceSelector from '../../components/AnnotationSourceSelector/AnnotationSourceSelector';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
+import ConditionTagger from '../../components/ConditionTagger/ConditionTagger'
 
-import {NEW_ACTIVITY_INIT, NEW_ACTIVITY_CHANGE, NEW_ACTIVITY_SEND} from '../../store/actions';
+import {NEW_ACTIVITY_INIT, NEW_ACTIVITY_CHANGE, NEW_ACTIVITY_SEND, NEW_ACTIVITY_TOGGLE_CONDITION} from '../../store/actions';
 
 class AnnotationView extends Component {
 
@@ -20,7 +21,8 @@ class AnnotationView extends Component {
             animal,
             submit,
             change_source,
-            change_annotation
+            change_annotation,
+            toggle_condition
         } = this.props
 
         return (
@@ -30,6 +32,7 @@ class AnnotationView extends Component {
                     animalName = {animal.name}
                     animalNumber = {animal.number}
                 />
+                <ConditionTagger onChange={toggle_condition}/>
                 <Annotation label="Notes" onChange={change_annotation}/>
                 <AnnotationSourceSelector onChange={change_source}/>
                 <SubmitButton label="Submit" onClick={submit}/>
@@ -70,6 +73,12 @@ const mapDispatchToProps = (dispatch, props) => {
             dispatch({
                 type: NEW_ACTIVITY_CHANGE,
                 activity: { source }
+            });
+        },
+        toggle_condition: (condition) => {
+            dispatch({
+                type: NEW_ACTIVITY_TOGGLE_CONDITION,
+                toggle: condition
             });
         }
     };
