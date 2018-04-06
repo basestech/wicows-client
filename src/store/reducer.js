@@ -9,14 +9,10 @@ const initialState = {
             3: {name :'Alakız', number : 54}
         }
     },
-    conditions : [
-        {id : 1, name : 'Disease'},
-        {id : 2, name : 'False Alarm'}
-    ],
     activities : {
         ids: [1],
         byId: {
-            1: {id: 1, animal_id :1, annotation: 'Annotation about Animal given', source: 'exam', activity: 'insemination' , conditions: [1]}
+            1: {id: 1, animal_id: 1, annotation: 'Annotation about Animal given', source: 'exam', activity: 'insemination' , conditions: [1]}
         }
     }
 }
