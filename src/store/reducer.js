@@ -16,6 +16,15 @@ function nextID(ids) {
     return ids.reduce(Math.max,0) + 1
 }
 
+const blankActivity = {
+    type: null,
+    animal_id: null,
+    annotation: "",
+    source: "data",
+    conditions: [],
+    status: WEB.NONE
+}
+
 const reducer = (state = initialState, action)=>{
     switch(action.type){
         case "@@INIT":
@@ -24,7 +33,7 @@ const reducer = (state = initialState, action)=>{
             return { ...state, lastLog: action.time }
 
         case at.NEW_ACTIVITY_INIT:
-            return {...state, new_activity: { ...action.activity, status: WEB.NONE } };
+            return {...state, new_activity: { ...blankActivity, ...action.activity, status: WEB.NONE } };
         case at.NEW_ACTIVITY_CHANGE:
             if (state.new_activity.status !== WEB.NONE) { return state }
             return {...state, new_activity: { ...state.new_activity, ...action.activity } };

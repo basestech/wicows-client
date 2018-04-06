@@ -51,9 +51,7 @@ const mapDispatchToProps = (dispatch, props) => {
                 type: NEW_ACTIVITY_INIT,
                 activity: {
                     type: props.activity,
-                    animal_id: props.animal_id,
-                    annotation: "",
-                    source: "data"
+                    animal_id: props.animal_id
                 }
             });
         },
