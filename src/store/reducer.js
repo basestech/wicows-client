@@ -24,7 +24,7 @@ const reducer = (state = initialState, action)=>{
             return { ...state, lastLog: action.time }
 
         case at.NEW_ACTIVITY_INIT:
-            return {...state, new_activity: { status: WEB.NONE, ...action.activity } };
+            return {...state, new_activity: { ...action.activity, status: WEB.NONE } };
         case at.NEW_ACTIVITY_CHANGE:
             if (state.new_activity.status !== WEB.NONE) { return state }
             return {...state, new_activity: { ...state.new_activity, ...action.activity } };
