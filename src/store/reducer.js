@@ -28,6 +28,14 @@ const reducer = (state = initialState, action)=>{
         case at.NEW_ACTIVITY_CHANGE:
             if (state.new_activity.status !== WEB.NONE) { return state }
             return {...state, new_activity: { ...state.new_activity, ...action.activity } };
+        case at.NEW_ACTIVITY_TOGGLE_CONDITION:
+            if (state.new_activity.status !== WEB.NONE) { return state }
+            const conditions = state.new_activity.conditions;
+            if (conditions.includes(action.toggle)) {
+                return { ...state, new_activity: { ...state.new_activity, conditions: conditions.filter(c => c !== action.toggle) }};
+            } else {
+                return { ...state, new_activity: { ...state.new_activity, conditions: [ ...conditions, action.toggle ] } };
+            }
         case at.NEW_ACTIVITY_SEND:
             return {...state, new_activity: { ...state.new_activity, status: WEB.REQUEST } };
         case at.NEW_ACTIVITY_SUCCESS:
