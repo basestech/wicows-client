@@ -12,6 +12,10 @@ import AnnotationHeader from '../components/AnnotationHeader/AnnotationHeader';
 import Annotation from '../components/Annotation/Annotation';
 import Selector from '../components/AnnotationSourceSelector/Selector/Selector';
 import AnnotationSourceSelector from '../components/AnnotationSourceSelector/AnnotationSourceSelector';
+import Tagger from '../components/Tagger/Tagger';
+import ConditionTagger from '../components/ConditionTagger/ConditionTagger';
+
+import conditions from '../constants/conditions'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -28,4 +32,6 @@ storiesOf('Animal', module)
                                  />)
   .add('Annotation', ()=> <Annotation label="Test annotation"/>)
   .add('Select', ()=> <Selector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>)
-  .add('AnnotationSourceSelector', ()=> <AnnotationSourceSelector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>);
+  .add('AnnotationSourceSelector', ()=> <AnnotationSourceSelector options = {[{'value':'val', 'text': 'abc', 'changed':'onChanged'}]}/>)
+  .add('Tagger', ()=> <Tagger tags={conditions} selected={['disease','broken']} />)
+  .add('ConditionTagger', ()=> <ConditionTagger onChange={action('clicked')} selected={['disease','broken']} />);
