@@ -1,6 +1,10 @@
 const conditions = [
-    {id : 1, name : 'Disease'},
-    {id : 2, name : 'False Alarm'}
+    { id: "disease", name: 'Disease' },
+    { id: "pregnancy", name: 'Pregnancy' },
+    { id: "broken", name: 'Broken bone' },
+    { id: "oestrus", name: "Oestrus" },
+    { id: "menopause", name: "Menopause" },
+    { id: "vaginitis", name: "Vaginitis" }
 ]
 
 export default conditions;
