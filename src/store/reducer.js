@@ -33,6 +33,8 @@ const reducer = (state = initialState, action)=>{
             const newById = {...state.activities.byId, [newId]: {...action.activity, id: newId } }
             return {...state, activities: { ids: newIds, byId: newById }}
             break;
+        case "CONSOLE_LOG":
+            return { ...state, lastLog: action.time }
     }
     return state;
 }
