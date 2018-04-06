@@ -1,12 +1,13 @@
 import React from 'react';
 import './Annotation.css';
 
-const Annotation = ({label}) => {
-    const onUpdate = ()=>{
+const Annotation = ({label, onChange}) => {
+    const changeHandler = (e) => {
+        onChange(e.target.value);
     }
     return <React.Fragment>
         { label ? <label className="Annotation">{label}</label> : null}
-        <textarea className="Annotation"></textarea>
+        <textarea className="Annotation" onChange={changeHandler}></textarea>
     </React.Fragment>
 }
 
