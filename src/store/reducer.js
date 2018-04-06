@@ -25,9 +25,6 @@ const reducer = (state = initialState, action)=>{
     switch(action.type){
         case "@@INIT":
             return state;
-        case "CONSOLE_LOG":
-            return { ...state, lastLog: action.time }
-
 
         case at.NEW_ACTIVITY_INIT:
             return {...state, new_activity: { ...blankActivity, ...action.activity, status: WEB.NONE } };
