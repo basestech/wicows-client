@@ -23,16 +23,19 @@ function nextID(ids) {
 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
+        case "@@INIT":
+            return state;
         case actionTypes.NEW_ACTIVITY:
             const newId = nextID(state.activities.ids)
             const newIds = [...state.activities.ids, newId];
             const newById = {...state.activities.byId, [newId]: {...action.activity, id: newId } }
-            return {...state, activities: { ids: newIds, byId: newById }}
-            break;
+            return {...state, activities: { ids: newIds, byId: newById }};
         case "CONSOLE_LOG":
             return { ...state, lastLog: action.time }
     }
-    return state;
+    const e = new Error(`No such action: ${action.type}`)
+    console.error(e);
+    throw e;
 }
 
 export default reducer;
