@@ -1,4 +1,4 @@
-import  React  from 'react';
+import React from 'react';
 
 const Tagger = ({onChange, tags, selected=[]}) =>{
     return tags.map((val) =>{

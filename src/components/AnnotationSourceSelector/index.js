@@ -1,5 +1,5 @@
 import React from 'react';
-import Selector from './Selector/Selector';
+import Selector from '../Selector';
 
 const AnnotationSourceSelector = ({onChange}) => {
     const options = [

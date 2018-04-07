@@ -7,13 +7,13 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-import AnimalHeader from '../components/AnimalHeader/AnimalHeader';
-import AnnotationHeader from '../components/AnnotationHeader/AnnotationHeader';
-import Annotation from '../components/Annotation/Annotation';
-import Selector from '../components/AnnotationSourceSelector/Selector/Selector';
-import AnnotationSourceSelector from '../components/AnnotationSourceSelector/AnnotationSourceSelector';
-import Tagger from '../components/Tagger/Tagger';
-import ConditionTagger from '../components/ConditionTagger/ConditionTagger';
+import AnimalHeader from '../components/AnimalHeader';
+import AnnotationHeader from '../components/AnnotationHeader';
+import Annotation from '../components/Annotation';
+import Selector from '../components/Selector';
+import AnnotationSourceSelector from '../components/AnnotationSourceSelector';
+import Tagger from '../components/Tagger';
+import ConditionTagger from '../components/ConditionTagger';
 
 import conditions from '../constants/conditions'
 

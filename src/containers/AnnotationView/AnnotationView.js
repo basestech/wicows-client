@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import AnnotationHeader from '../../components/AnnotationHeader/AnnotationHeader';
-import Annotation from '../../components/Annotation/Annotation';
-import AnnotationSourceSelector from '../../components/AnnotationSourceSelector/AnnotationSourceSelector';
-import SubmitButton from '../../components/SubmitButton/SubmitButton';
-import ConditionTagger from '../../components/ConditionTagger/ConditionTagger'
+import AnnotationHeader from '../../components/AnnotationHeader';
+import Annotation from '../../components/Annotation';
+import AnnotationSourceSelector from '../../components/AnnotationSourceSelector';
+import SubmitButton from '../../components/SubmitButton';
+import ConditionTagger from '../../components/ConditionTagger'
 
 import {NEW_ACTIVITY_INIT, NEW_ACTIVITY_CHANGE, NEW_ACTIVITY_SEND, NEW_ACTIVITY_TOGGLE_CONDITION} from '../../store/actions';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ActivityHeader from './ActivityHeader';
-import AnimalHeader from '../AnimalHeader/AnimalHeader';
+import AnimalHeader from '../AnimalHeader';
 import './AnnotationHeader.css'
 
 const AnnotationHeader = ({activity, animalName, animalNumber}) =>
