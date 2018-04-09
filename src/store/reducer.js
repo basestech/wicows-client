@@ -23,6 +23,7 @@ const blankActivity = {
 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
+        case "@@redux/INIT":
         case "@@INIT":
             return state;
 

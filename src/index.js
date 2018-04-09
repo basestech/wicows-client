@@ -7,9 +7,11 @@ import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import reducer from './store/reducer';
-import new_activity_slinger from './webslingers/new_activity'
+import new_activity_slinger from './webslingers/new_activity';
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+import {devToolsEnhancer} from 'redux-devtools-extension';
+
+const store = createStore(reducer, devToolsEnhancer());
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
