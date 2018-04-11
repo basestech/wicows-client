@@ -4,10 +4,10 @@ h2.AnimalHeader {
     margin: 0;
     background-color: green;
     color: white;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 .AnimalHeader .number {
-    opacity: .6;
-    margin-right: .5em;
+    opacity: 0.6;
+    margin-right: 0.5em;
 }

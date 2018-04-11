@@ -1,12 +1,19 @@
-import React from 'react';
-import Selector from '../Selector';
+import React from "react";
+import Selector from "../Selector";
 
-const AnnotationSourceSelector = ({onChange}) => {
+const AnnotationSourceSelector = ({ onChange }) => {
     const options = [
         { id: "data", text: "Data evaluation" },
-        { id: "exam", text: "Examination"}
-    ]
-    return <Selector id="source" label="Source" options={options} onChange={onChange}/>
-}
+        { id: "exam", text: "Examination" }
+    ];
+    return (
+        <Selector
+            id="source"
+            label="Source"
+            options={options}
+            onChange={onChange}
+        />
+    );
+};
 
 export default AnnotationSourceSelector;

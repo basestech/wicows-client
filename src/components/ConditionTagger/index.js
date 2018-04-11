@@ -1,14 +1,18 @@
-import  React  from 'react';
+import React from "react";
 
-import conditions from '../../constants/conditions';
-import Tagger from '../Tagger';
+import conditions from "../../constants/conditions";
+import Tagger from "../Tagger";
 
-import './ConditionTagger.css'
+import "./ConditionTagger.css";
 
-const ConditionTagger = (props) => {
-    return <ul className="tagger condition">
-        {Tagger({...props, tags: conditions }).map( tag => <li key={tag.key}>{tag}</li> )}
-    </ul>
-}
+const ConditionTagger = props => {
+    return (
+        <ul className="tagger condition">
+            {Tagger({ ...props, tags: conditions }).map(tag => (
+                <li key={tag.key}>{tag}</li>
+            ))}
+        </ul>
+    );
+};
 
 export default ConditionTagger;
