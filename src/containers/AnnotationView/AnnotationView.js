@@ -6,6 +6,9 @@ import Annotation from "../../components/Annotation";
 import AnnotationSourceSelector from "../../components/AnnotationSourceSelector";
 import SubmitButton from "../../components/SubmitButton";
 import ConditionTagger from "../../components/ConditionTagger";
+import LineChart from "../../components/LineChart";
+
+import data from "../../constants/data";
 
 import {
     NEW_ACTIVITY_INIT,
@@ -36,6 +39,7 @@ class AnnotationView extends Component {
                     animalName={animal.name}
                     animalNumber={animal.number}
                 />
+                <LineChart data={data} viewBoxWidth = "200" viewBoxHeight="100"/>
                 <ConditionTagger onChange={toggle_condition} />
                 <Annotation label="Notes" onChange={change_annotation} />
                 <AnnotationSourceSelector onChange={change_source} />
