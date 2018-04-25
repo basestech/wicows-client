@@ -1,7 +1,7 @@
 textarea.Annotation {
     width: 100%;
     border: none;
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: #eee;
     margin: 0;
     height: auto;
@@ -13,8 +13,8 @@ textarea.Annotation:focus {
 }
 
 label.Annotation {
-    margin: .1rem;
-    font-size: .6rem;
+    margin: 0.1rem;
+    font-size: 0.6rem;
     margin-top: 1rem;
-    opacity: .6;
+    opacity: 0.6;
 }
