@@ -1,9 +1,9 @@
 import React, {Component} from "react"
 import PropTypes from "prop-types"
 
-import "./LineChart.css"
-
 import Axis from './Axis';
+import Path from './Path';
+import data from "../../constants/data";
 
 
 class LineChart extends Component {
@@ -59,7 +59,7 @@ class LineChart extends Component {
           }
         return (
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
-                {this.makePath()}
+                <Path {...commonProps} {...this.props}/>
                 <Axis {...commonProps}/>
                 </svg>
             );
