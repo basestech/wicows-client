@@ -1,5 +1,18 @@
-.line-chart{
+.line-chart {
     margin: 0;
     width: 100%;
     height: 400 px;
+}
+
+.line-chart .axis {
+    stroke: #bdc3c7;
+}
+
+.line-chart .label {
+    fill: rgb(39, 135, 231);
+}
+
+.line-chart .path {
+    stroke-width: 3;
+    fill: none;
 }
