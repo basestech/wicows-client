@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 import Axis from './Axis';
 import Path from './Path';
+import Labels from './Labels';
 import data from "../../constants/data";
 
 
@@ -20,7 +21,8 @@ class LineChart extends Component {
     // GET MAX & MIN Y
     getMinY = () => {
         const {data} = this.props;
-        return data.reduce((min, p) => p.y < min ? p.y : min, data[0].y);
+        //return data.reduce((min, p) => p.y < min ? p.y : min, data[0].y);
+        return 0;
     }
     getMaxY = () => {
         const {data} = this.props;
@@ -48,11 +50,13 @@ class LineChart extends Component {
             minY: this.getMinY(),
           }
         return (
+            <div className = "line-chart">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
-                <Path {...commonProps} {...this.props}/>
-                <Axis {...commonProps}/>
+                    <Path {...commonProps} {...this.props}/>
+                    <Axis {...commonProps}/>
                     <Labels {...this.props} {...commonProps} />
                 </svg>
+            </div>
             );
     }
 }

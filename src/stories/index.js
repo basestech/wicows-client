@@ -1,6 +1,8 @@
 import React from "react";
 import "../index.css";
 
+import data from "../constants/data";
+
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
@@ -14,6 +16,7 @@ import Selector from "../components/Selector";
 import AnnotationSourceSelector from "../components/AnnotationSourceSelector";
 import Tagger from "../components/Tagger";
 import ConditionTagger from "../components/ConditionTagger";
+import LineChart from "../components/LineChart";
 
 import conditions from "../constants/conditions";
 
@@ -57,4 +60,7 @@ storiesOf("Animal", module)
             onChange={action("clicked")}
             selected={["disease", "broken"]}
         />
+    ))
+    .add("LineChart", () =>(
+        <LineChart data={data} viewBoxWidth = "200" viewBoxHeight="100"/>
     ));

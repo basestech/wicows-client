@@ -39,7 +39,7 @@ class AnnotationView extends Component {
                     animalName={animal.name}
                     animalNumber={animal.number}
                 />
-                <LineChart data={data} viewBoxWidth = "200" viewBoxHeight="100"/>
+                {/* <LineChart data={data} viewBoxWidth = "200" viewBoxHeight="100"/> */}
                 <ConditionTagger onChange={toggle_condition} />
                 <Annotation label="Notes" onChange={change_annotation} />
                 <AnnotationSourceSelector onChange={change_source} />
