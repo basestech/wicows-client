@@ -2,7 +2,7 @@ import React, { Component } from "react";
 //import logo from '../logo.svg';
 import "./App.css";
 
-import AnnotationView from "./AnnotationView/AnnotationView";
+import AnnotationView from "./AnnotationView";
 
 class App extends Component {
     render() {
