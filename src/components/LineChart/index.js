@@ -51,6 +51,7 @@ class LineChart extends Component {
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
                 <Path {...commonProps} {...this.props}/>
                 <Axis {...commonProps}/>
+                    <Labels {...this.props} {...commonProps} />
                 </svg>
             );
     }
