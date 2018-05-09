@@ -7,7 +7,7 @@ const Path = ({ data, color, getSvgX, getSvgY, maxX, maxY, minX, minY }) => {
         return "L " + getSvgX(point.x) + " " + getSvgY(point.y) + " ";
     });
 
-    return <path className="path" d={pathD} style={{ stroke: color }} />;
+    return <path className="path" d={pathD} style={{ stroke: color , 'strokeWidth' : '.05em'}} />;
 };
 
 export default Path;

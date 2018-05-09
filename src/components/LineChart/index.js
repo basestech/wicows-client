@@ -31,11 +31,13 @@ class LineChart extends Component {
 
     getSvgX = x => {
         const { svgWidth } = this.props;
-        return x / this.getMaxX() * svgWidth;
+        //return x / this.getMaxX() * svgWidth;
+        return x;
     };
     getSvgY = y => {
         const { svgHeight } = this.props;
-        return svgHeight - y / this.getMaxY() * svgHeight;
+        // return svgHeight - y / this.getMaxY() * svgHeight;
+        return y;
     };
 
     render() {
@@ -51,10 +53,15 @@ class LineChart extends Component {
         };
         return (
             <div className="line-chart">
-                <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
-                    <Path {...commonProps} {...this.props} />
-                    <Axis {...commonProps} />
-                    <Labels {...this.props} {...commonProps} />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="100%" height="100%"
+                    preserveAspectRatio="xMinYMin slice"
+                    version="1.1">
+                    <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+                        <Path {...commonProps} {...this.props} />
+                        <Axis {...commonProps} />
+                        <Labels {...this.props} {...commonProps} />
+                    </svg>
                 </svg>
             </div>
         );
@@ -64,6 +71,6 @@ LineChart.defaultProps = {
     data: [],
     color: "#2196F3",
     svgHeight: 300,
-    svgWidth: 700
+    svgWidth: 900
 };
 export default LineChart;
