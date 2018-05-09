@@ -15,8 +15,7 @@ const Labels = ({
     labelsOffsetY,
     labelsFormatX,
     labelsFormatY,
-    labelsCountY,
-    labelFontSize
+    labelsCountY
 }) => {
     if (labelsVisible) {
         let xLabels;
@@ -31,14 +30,13 @@ const Labels = ({
 
         xLabels = xLabelsRange.map(x => (
             <g className="label" key={x} color={labelsColor}>
-                <circle r={0.3 * labelFontSize} cx={x} cy={maxY} />
+                <circle r="2" cx={x} cy={maxY} />
                 <text
                     x={x}
                     y={0 + labelsHeightX}
                     // transform={`translate(0, ${labelsOffsetX})`}
                     transform={`translate(0, ${maxY + labelsOffsetX})`}
                     textAnchor="middle"
-                    font-size={labelFontSize}
                 >
                     {labelsFormatX(x)}
                 </text>
@@ -54,7 +52,7 @@ const Labels = ({
 
         yLabels = yLabelsRange.map(y => (
             <g className="label" key={y} color={labelsColor}>
-                <circle r={0.3 * labelFontSize} cx={minX} cy={y} />
+                <circle r={"2"} cx={minX} cy={y} />
                 <text
                     x={minX}
                     // y={y + labelsHeightX / 2}
@@ -62,7 +60,6 @@ const Labels = ({
                     // transform={`translkate(-${labelsOffsetY}, 0)`}
                     transform={`translate(-${labelsOffsetY}, 0)`}
                     textAnchor="end"
-                    font-size= {labelFontSize}
                 >
                     {labelsFormatY(y)}
                 </text>
@@ -91,9 +88,8 @@ Labels.defaultProps = {
     labelsHeightX: 12,
     labelsOffsetX: 0,
     labelsOffsetY: 5,
-    labelsStepX: 20,
-    labelsVisible: true,
-    labelFontSize : "5"
+    labelsStepX: 40,
+    labelsVisible: true
 };
 
 export default Labels;
