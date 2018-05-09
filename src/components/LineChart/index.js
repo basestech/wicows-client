@@ -54,7 +54,7 @@ class LineChart extends Component {
         return (
             <div className="line-chart">
                 <svg xmlns="http://www.w3.org/2000/svg"
-                    width="100%" height="100%"
+                    width="900" height="300"
                     preserveAspectRatio="xMinYMin slice"
                     version="1.1">
                     <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
