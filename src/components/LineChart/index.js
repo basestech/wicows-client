@@ -21,31 +21,18 @@ class LineChart extends Component {
     // GET MAX & MIN Y
     getMinY = () => {
         const { data } = this.props;
-        //return data.reduce((min, p) => p.y < min ? p.y : min, data[0].y);
-        return 0;
+        return data.reduce((min, p) => p.y < min ? p.y : min, data[0].y);
+        // return 0;
     };
     getMaxY = () => {
         const { data } = this.props;
         return data.reduce((max, p) => (p.y > max ? p.y : max), data[0].y);
     };
 
-    getSvgX = x => {
-        const { svgWidth } = this.props;
-        //return x / this.getMaxX() * svgWidth;
-        return x;
-    };
-    getSvgY = y => {
-        const { svgHeight } = this.props;
-        // return svgHeight - y / this.getMaxY() * svgHeight;
-        return y;
-    };
-
     render() {
         const { svgHeight, svgWidth } = this.props;
 
         const commonProps = {
-            getSvgX: this.getSvgX.bind(this),
-            getSvgY: this.getSvgY.bind(this),
             maxX: this.getMaxX(),
             maxY: this.getMaxY(),
             minX: this.getMinX(),
@@ -54,10 +41,10 @@ class LineChart extends Component {
         return (
             <div className="line-chart">
                 <svg xmlns="http://www.w3.org/2000/svg"
-                    width="900" height="300"
+                    width="2400" height="800"
                     preserveAspectRatio="xMinYMin slice"
                     version="1.1">
-                    <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+                    <svg viewBox={`-35 -30 ${svgWidth} ${svgHeight}`}>
                         <Path {...commonProps} {...this.props} />
                         <Axis {...commonProps} />
                         <Labels {...this.props} {...commonProps} />

@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const Axis = ({ getSvgX, getSvgY, maxX, maxY, minX, minY }) => {
+const Axis = ({maxX, maxY, minX, minY }) => {
     return (
         <g className="axis">
             <line
-                x1={getSvgX(minX)}
-                y1={getSvgY(minY)}
-                x2={getSvgX(maxX)}
-                y2={getSvgY(minY)}
+                x1={minX}
+                y1={maxY}
+                x2={maxX}
+                y2={maxY}
             />
             <line
-                x1={getSvgX(minX)}
-                y1={getSvgY(minY)}
-                x2={getSvgX(minX)}
-                y2={getSvgY(maxY)}
+                x1={minX}
+                y1={minY}
+                x2={minX}
+                y2={maxY}
             />
         </g>
     );

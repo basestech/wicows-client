@@ -3,8 +3,6 @@ import React from "react";
 
 const Labels = ({
     color,
-    getSvgX,
-    getSvgY,
     maxX,
     maxY,
     minX,
@@ -32,11 +30,12 @@ const Labels = ({
 
         xLabels = xLabelsRange.map(x => (
             <g className="label" key={x} color={labelsColor}>
-                <circle r="2" cx={getSvgX(x)} cy={getSvgY(0)} />
+                <circle r="2" cx={x} cy={maxY} />
                 <text
-                    x={getSvgX(x)}
-                    y={getSvgY(0) + labelsHeightX}
-                    transform={`translate(0, ${labelsOffsetX})`}
+                    x={x}
+                    y={0 + labelsHeightX}
+                    // transform={`translate(0, ${labelsOffsetX})`}
+                    transform={`translate(0, ${maxY + labelsOffsetX})`}
                     textAnchor="middle"
                 >
                     {labelsFormatX(x)}
@@ -53,10 +52,11 @@ const Labels = ({
 
         yLabels = yLabelsRange.map(y => (
             <g className="label" key={y} color={labelsColor}>
-                <circle r="2" cx={getSvgX(minX)} cy={getSvgY(y)} />
+                <circle r="2" cx={minX} cy={y} />
                 <text
-                    x={getSvgX(minX)}
-                    y={getSvgY(y) + labelsHeightX / 2}
+                    x={minX}
+                    y={y + labelsHeightX / 2}
+                    // transform={`translkate(-${labelsOffsetY}, 0)`}
                     transform={`translate(-${labelsOffsetY}, 0)`}
                     textAnchor="end"
                 >
@@ -85,9 +85,9 @@ Labels.defaultProps = {
     labelsFormatX: x => x,
     labelsFormatY: y => y,
     labelsHeightX: 12,
-    labelsOffsetX: 15,
-    labelsOffsetY: 15,
-    labelsStepX: 2,
+    labelsOffsetX: 5,
+    labelsOffsetY: 5,
+    labelsStepX: 50,
     labelsVisible: true
 };
 
